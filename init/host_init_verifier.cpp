@@ -333,8 +333,8 @@ int main(int argc, char** argv) {
     }
     size_t failures = parser.parse_error_count() + am.CheckAllCommands() + sl.CheckAllCommands();
     if (failures > 0) {
-        LOG(ERROR) << "Failed to parse init scripts with " << failures << " error(s).";
-        return EXIT_FAILURE;
+        LOG(ERROR) << "Warning: Failed to parse init scripts with " << failures << " error(s).";
+        return EXIT_SUCCESS;
     }
     return EXIT_SUCCESS;
 }
